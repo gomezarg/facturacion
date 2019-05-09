@@ -1,0 +1,13 @@
+.bg-light {
+  background-color: red !important; }
+
+.navbar .navbar-expand-lg .navbar-light .bg-light {
+  background: black !important; }
+
+.btn, .btn-primary, .btn-lg {
+  margin-left: 10px !important; }
+
+.h1 {
+  color: red; }
+
+/*# sourceMappingURL=index.css.map */

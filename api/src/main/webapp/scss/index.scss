@@ -1,0 +1,23 @@
+.bg-light {
+    background-color: red !important;
+}
+.navbar .navbar-expand-lg .navbar-light .bg-light{
+    background: black !important ;
+}
+@mixin bg-variant($parent, $color) {
+    #{$parent} {
+      background-color: $color ;
+    }
+    a#{$parent},
+    button#{$parent} {
+      @include hover-focus {
+        background-color: darken($color, 10%) ;
+      }
+    }
+  }
+.btn, .btn-primary, .btn-lg {
+  margin-left: 10px !important;
+}
+.h1 {
+  color: red;
+}

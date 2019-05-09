@@ -232,14 +232,15 @@ CREATE TABLE sale (
 -- trigger
 CREATE OR REPLACE FUNCTION sale_product_trg()
 RETURNS trigger AS $$
-	current_stock                 integer;
+DECLARE
+	current_stock          integer;
 	
 BEGIN
-	SELECT stock FROM product WHERE id = NEW.product INTO current_stock;
+	current_stock := stock FROM product where id = NEW.product;
 	
 	IF current_stock < NEW.quantity 
 	THEN
-		RAISE EXCEPTION 'caca';
+		RAISE EXCEPTION 'error';
 	END IF;
 
 	UPDATE product
@@ -255,19 +256,6 @@ CREATE TRIGGER sale_product_trg AFTER INSERT ON sale
 	FOR EACH ROW EXECUTE PROCEDURE sale_product_trg();
 
 --fin trigger
-CREATE OR REPLACE FUNCTION sale_product_trg()
-RETURNS trigger AS $$
-BEGIN
-	UPDATE product 
-		SET stock = stock - NEW.quantity
-	WHERE id = NEW.product;
-
-	RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER sale_product_trg AFTER INSERT ON sale
-	FOR EACH ROW EXECUTE PROCEDURE sale_product_trg();
 
 
 CREATE OR REPLACE FUNCTION destroy_sale_trg()
