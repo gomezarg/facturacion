@@ -9,5 +9,9 @@
 
 .h1 {
   color: red; }
+.btn .btn-primary{
+  margin-bottom: 20px !important;
+  margin-right: 20px !important;
+}
 
 /*# sourceMappingURL=index.css.map */
