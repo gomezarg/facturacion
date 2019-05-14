@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Facturación Productos</title>
+    <title>Facturación Compras</title>
     <link rel="stylesheet" href="css/index.css">
     <!--Boostrap 4-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +18,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Productos</a>
+                      <a class="nav-link" href="product_listen.html">Productos</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link" href="#">Compra</a>
@@ -29,23 +29,22 @@
                   </ul>
                 </div>
               </nav>
-              <input style="margin: 10px" type="button" class="btn btn-primary" onclick=" location.href='product_creation.html' " value="Agregar producto" name="boton" /> 
-              <input style="margin: 10px" type="button" class="btn btn-primary" onclick=" location.href='product_delete.html' " value="Eliminar producto" name="boton" /><br>
+              <input style="margin: 10px" type="button" class="btn btn-primary" onclick=" location.href='purchase_creation.html' " value="Agregar compra" name="boton" /> 
+              <input style="margin: 10px" type="button" class="btn btn-primary" onclick=" location.href='purchase_delete.html' " value="Eliminar compra" name="boton" /><br>
               
               
               <div class="container">
                 
               
-              <p>PRODUCTOS:
+              <p>COMPRAS:
                 <div id="products_table"></div>
               </p>
               <table  id="mytable" class="table table-bordered table-hover ">
                 <tr>
                   <th id="id" >ID</th>
-                  <th id="name" >NOMBRE</th>
-                  <th id="description">DESCRIPCIÓN</th>
-                  <th id="price">PRECIO</th>
-                  <th id="stock">STOCK</th>
+                  <th id="timestamp" >FECHA</th>
+                  <th id="product">ID DEL PRODUCTO</th>
+                  <th id="quantity">CANTIDAD</th>
               
                 </tr>
               </table>
