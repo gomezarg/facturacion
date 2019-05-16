@@ -1,0 +1,28 @@
+th, td, p, input {
+    font:14px Verdana;
+    font-size: 30px ;
+}
+
+table {
+    width: 100%;
+}
+th {
+    height: 50px;
+}
+
+table, th, td
+{
+	border: solid 1px #DDD;
+	border-collapse: collapse;
+	padding: 2px 3px;
+	text-align: center;
+}
+th{
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+td {
+    padding: 15px;
+    text-align: left;
+  }

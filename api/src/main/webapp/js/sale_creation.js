@@ -1,11 +1,11 @@
-function createPurchase() {
-    let purchase = {
+function createSale() {
+    let sale = {
         
         product: parseInt(document.getElementById("product").value),
         quantity: parseInt(document.getElementById("quantity").value)
     };
     var xhr = new XMLHttpRequest();
-    var url = "api/purchase";
+    var url = "api/sale";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
@@ -14,6 +14,6 @@ function createPurchase() {
             console.log(response);
         }
     };
-    xhr.send(JSON.stringify(purchase));
-    alert('Compra creada!');
+    xhr.send(JSON.stringify(sale));
+    alert('Venta creada!');
 }

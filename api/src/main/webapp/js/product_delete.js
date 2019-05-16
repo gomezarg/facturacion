@@ -1,7 +1,10 @@
-
+function deleteProduct() {
+    let product = {
+        id: parseInt(document.getElementById("id").value)
+    };
     var xhr = new XMLHttpRequest();
     var url = "api/product";
-    xhr.open("GET", url, true);
+    xhr.open("DELETE", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -9,4 +12,6 @@
             console.log(response);
         }
     };
- 
+    xhr.send(JSON.stringify(product));
+    alert('Producto eliminado!');
+}
