@@ -26,7 +26,8 @@ CREATE OR REPLACE FUNCTION product_search (
 )
 RETURNS SETOF product AS 
 $$
-	SELECT * FROM PRODUCT WHERE name ILIKE '%' || p_name || '%';
+	SELECT * FROM PRODUCT WHERE name ILIKE '%' || p_name || '%'
+	ORDER by id;
 $$ LANGUAGE sql STABLE STRICT;
 
 
