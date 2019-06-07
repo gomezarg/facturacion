@@ -1,13 +1,28 @@
-<h1>Alta de Producto</h1>
+<h1>Productos</h1>
+<table>
+	<thead>
+		<th># ID</th>
+		<th>Nombre</th>
+		<th>Descripcion</th>
+		<th>Precio</th>
+		<th>Stock</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products.data">
+			<td>{{product.id}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.stock}}</td>
+		</tr>
+	</tbody>
+</table>
 <hr>
-<input type="text" [(ngModel)]="this.name" placeholder="Nombre del Producto"> <br>
-<input type="text" [(ngModel)]="this.description" placeholder="Descripcion del Producto"> <br>
-<input type="text" [(ngModel)]="this.price" placeholder="Precio del Producto"> <br>
-<button (click)="this.createProduct()">
-  Crear Producto
-</button>
+<h1>Alta de Producto</h1><br>
 <br>
-<hr>
-<h2>{{this.name}}</h2>
-<h2>{{this.description}}</h2>
-<h2>{{this.price}}</h2>
+<input type="text" [(ngModel)]="this.name" placeholder="Nombre del producto"/> <br>
+<input type="text" [(ngModel)]="this.description" placeholder="Descripcion del producto"/><br>
+<input type="number" [(ngModel)]="this.price" placeholder="Precio del producto"/><br><br>
+<button (click)="this.createProduct()">
+	Crear Producto
+</button>

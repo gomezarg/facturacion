@@ -1,24 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from './product';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ProductService {
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    postProduct(product: Product) {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-            }),
-        };
+  postProduct(product: Product) {
+    const httpOptions = {
+	  headers: new HttpHeaders({
+		'Content-Type':  'application/json',
+	  }),
+	};
 
-        return this.http.post (
-            '/api/product',
-            JSON.stringify(product),
-            httpOptions
-        );
-    }
+	return this.http.post (
+	  '/api/product',
+	  JSON.stringify(product),
+	  httpOptions
+	);
+  }
+
+  getProduct() {
+	const httpOptions = {
+		headers: new HttpHeaders({
+		  'Content-Type':  'application/json',
+		}),
+	  };
+  
+	return this.http.get (
+		'/api/product',
+		httpOptions
+	);
+  }
 }
