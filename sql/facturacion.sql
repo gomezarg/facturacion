@@ -35,6 +35,9 @@ CREATE OR REPLACE FUNCTION product_destroy (
 	IN p_id                       integer
 ) RETURNS void AS 
 $$
+	DELETE FROM purchase WHERE product = p_id;
+	DELETE FROM sale WHERE product = p_id;
+
 	DELETE FROM product WHERE id = p_id;
 $$ LANGUAGE sql VOLATILE STRICT;
 

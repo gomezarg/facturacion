@@ -20,7 +20,11 @@ export class ProductService {
 	  JSON.stringify(product),
 	  httpOptions
 	);
-  }
+	}
+	
+	delete(id) {
+		return this.http.delete(`/api/product/${id}`);
+	}
 
   getProduct() {
 	const httpOptions = {
@@ -29,7 +33,7 @@ export class ProductService {
 		}),
 	  };
   
-	return this.http.get (
+	return this.http.get<any>(
 		'/api/product',
 		httpOptions
 	);
